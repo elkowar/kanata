@@ -1242,6 +1242,7 @@ impl Kanata {
                                 (start.elapsed()).as_nanos()
                             );
 
+                            drop(k);
                             std::thread::sleep(time::Duration::from_millis(1));
                         }
                         Err(TryRecvError::Disconnected) => {
